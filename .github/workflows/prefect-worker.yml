@@ -23,11 +23,10 @@ jobs:
           pip install prefect
 
       - name: Prefect login to Cloud
-        run: prefect cloud login -k ${secrets.PREFECT_API_KEY}
+        run: prefect cloud login -k ${{ secrets.PREFECT_API_KEY }}
 
       - name: Deploy the Prefect flow to Prefect Cloud
         run: prefect deploy
 
       - name: Start Prefect Worker
-        run: |
-          start-process "prefect worker start --pool 'default' --work-queue 'default'"
+        run: prefect worker start --pool 'default' --work-queue 'default'
