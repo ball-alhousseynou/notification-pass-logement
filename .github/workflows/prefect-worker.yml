@@ -23,7 +23,7 @@ jobs:
           pip install prefect
 
       - name: Prefect login to Cloud
-        run: prefect login --key ${secrets.PREFECT_API_KEY}
+        run: prefect cloud login -k ${secrets.PREFECT_API_KEY}
 
       - name: Deploy the Prefect flow to Prefect Cloud
         run: prefect deploy
