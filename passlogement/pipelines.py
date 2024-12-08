@@ -10,5 +10,5 @@ class JsonWriterPipeline:
         return item
 
     def close_spider(self, spider):
-        with open("outputs/great_offers.json", "w") as file:
+        with open("offers/great_offers.json", "w") as file:
             json.dump(self.items, file, default=str, indent=4)
