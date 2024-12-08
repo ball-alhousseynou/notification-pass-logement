@@ -1,19 +1,12 @@
 # Notifications Pass Logement
 
 ---
-
-<div style="text-align: justify">This project automates the process of monitoring and retrieving updates from the Pass Logement platform. By using Scrapy for web scraping and Prefect for workflow orchestration, it ensures efficient handling of data extraction, task management, and notifications.</div>
-
-<br>
-<center><img src="assets/pass-logement-logo.png" alt="Pass Logement Logo" /></center>
-
----
-
-## Description of the Project
-
 One morning, my girlfriend said to me, a bit annoyed: "I have to keep logging into the Pass Logement platform to check if new apartments are available!" And I thought to myself: "No, this can't go on like this!" And so, the **Notifications Pass Logement** project was born from this daily frustration. The idea? To automate the entire process by retrieving updates from the platform and sending notifications as soon as something new appears.
 
 With this project, no more endless logins and manual checks. With Scrapy for scraping and Prefect for managing workflows, the tool automatically retrieves the relevant information and can send alerts. A simple and effective solution to never miss an important listing again!
+
+<br>
+<center><img src="assets/pass-logement-logo.png" alt="Pass Logement Logo" /></center>
 
 ---
 
