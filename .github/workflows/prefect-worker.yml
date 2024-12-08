@@ -1,0 +1,30 @@
+name: Run Prefect Worker on Windows
+
+on:
+  push:
+    branches:
+      - master  
+jobs:
+  prefect-worker:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install prefect
+
+      - name: Prefect login to Cloud
+        run: prefect login --key ${secrets.PREFECT_API_KEY}
+
+      - name: Start Prefect Worker
+        run: |
+          start-process "prefect worker start --pool 'default' --work-queue 'default'"
