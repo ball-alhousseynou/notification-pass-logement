@@ -25,6 +25,9 @@ jobs:
       - name: Prefect login to Cloud
         run: prefect login --key ${secrets.PREFECT_API_KEY}
 
+      - name: Deploy the Prefect flow to Prefect Cloud
+        run: prefect deploy
+
       - name: Start Prefect Worker
         run: |
           start-process "prefect worker start --pool 'default' --work-queue 'default'"
