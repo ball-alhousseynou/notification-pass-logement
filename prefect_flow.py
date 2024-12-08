@@ -18,7 +18,7 @@ def get_prefect_variable(var_name: str):
 def run_passlogement_spider():
 
     try:
-        output_file = "outputs/great_offers.json"
+        output_file = "offers/great_offers.json"
 
         scrapy_command = (
             f"scrapy crawl passlogement -a username={get_prefect_variable('username')} "
