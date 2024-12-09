@@ -1,7 +1,7 @@
-# Notifications Pass Logement
+# Notification Pass Logement
 
 ---
-One morning, my girlfriend said to me, a bit annoyed: "I have to keep logging into the Pass Logement platform to check if new apartments are available!" And I thought to myself: "No, this can't go on like this!" And so, the **Notifications Pass Logement** project was born from this daily frustration. The idea? To automate the entire process by retrieving updates from the platform and sending notifications as soon as something new appears.
+One morning, my girlfriend said to me, a bit annoyed: "I have to keep logging into the Pass Logement platform to check if new apartments are available!" And I thought to myself: "No, this can't go on like this!" And so, the **Notification Pass Logement** project was born from this daily frustration. The idea? To automate the entire process by retrieving updates from the platform and sending notifications as soon as something new appears.
 
 With this project, no more endless logins and manual checks. With Scrapy for scraping and Prefect for managing workflows, the tool automatically retrieves the relevant information and can send alerts. A simple and effective solution to never miss an important listing again!
 
