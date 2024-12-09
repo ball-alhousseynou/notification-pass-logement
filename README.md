@@ -23,8 +23,8 @@ With this project, no more endless logins and manual checks. With Scrapy for scr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ball-alhousseynou/notifications-pass-logement.git
-   cd notifications-pass-logement
+   git clone https://github.com/ball-alhousseynou/notification-pass-logement.git
+   cd notification-pass-logement
    ```
 
 2. Install the required dependencies:
