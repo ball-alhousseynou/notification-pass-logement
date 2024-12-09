@@ -67,7 +67,7 @@ def send_email_notification(data):
     sender_password_app = get_prefect_variable("sender_password_app")
     sample_offer = data[0]
 
-    subject = f"TEST-Passlogement: {len(data)} Great offers retrieved"
+    subject = f"Passlogement: {len(data)} Great offers retrieved"
     message = f"""
     New Rental Opportunity: {sample_offer['city']}
     🌟 Exclusive Offer from {sample_offer['partner_label']} 🌟
