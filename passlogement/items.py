@@ -21,7 +21,7 @@ class Offers(BaseModel):
     date_validity: date = Field(alias="dateValidity")
 
     def is_great_offer(self):
-        thirty_minutes_ago = datetime.now() - timedelta(minutes=30)
+        thirty_minutes_ago = datetime.now() - timedelta(minutes=120)
         return (
             self.number_candidates_on_offer < 5
             and self.accommodation_type_label in {"T2", "T3"}
