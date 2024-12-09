@@ -1,1 +1,36 @@
-[]
+[
+    {
+        "id": 4565,
+        "reference": "289699",
+        "accommodation_type_label": "T2",
+        "surface": 33,
+        "rental_price": 694.42,
+        "roommate": 0,
+        "dalo": 1,
+        "city": "PARIS 20EME ARRONDISSEMENT",
+        "address": "5 avenue Porte de Vincennes",
+        "zipcode": 75020,
+        "number_candidates_on_offer": 5,
+        "partner_label": "CDC HABITAT PARIS",
+        "date_created": "2024-12-03 09:11:20",
+        "date_updated": "2024-12-09 08:26:30",
+        "date_validity": "2024-12-13"
+    },
+    {
+        "id": 4569,
+        "reference": "601768",
+        "accommodation_type_label": "T3",
+        "surface": 66,
+        "rental_price": 1176.0,
+        "roommate": 0,
+        "dalo": 0,
+        "city": "BAGNEUX",
+        "address": "1 All\u00e9e de Chevreuse ",
+        "zipcode": 92220,
+        "number_candidates_on_offer": 2,
+        "partner_label": "IRP",
+        "date_created": "2024-12-04 15:43:27",
+        "date_updated": "2024-12-09 08:28:05",
+        "date_validity": "2024-12-15"
+    }
+]
