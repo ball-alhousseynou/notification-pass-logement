@@ -65,33 +65,23 @@ def send_email_notification(data):
     sender_email = get_prefect_variable("sender_email")
     receiver_email = get_prefect_variable("receiver_email")
     sender_password_app = get_prefect_variable("sender_password_app")
-    sample_offer = data[0]
 
-    subject = f"Passlogement: {len(data)} Great offers retrieved"
-    message = f"""
-    New Rental Opportunity: {sample_offer['city']}
-    🌟 Exclusive Offer from {sample_offer['partner_label']} 🌟
+    subject = f"Passlogement: {len(data)} Great Offers Retrieved"
+    message = "New Rental Opportunities:\n"
 
-    Hi,
+    for offer in data:
+        message += f"""
+        🌟 Exclusive Offer from {offer['partner_label']} 🌟
 
-    We are pleased to present a fantastic rental opportunity in the heart of {sample_offer['city']}:
+        📍 City: {offer['city']}
+        🏠 Accommodation Type: {offer['accommodation_type_label']}
+        📐 Surface Area: {offer['surface']} m²
+        💰 Rental Price: €{offer['rental_price']}/month
+        📍 Address: {offer['address']}, {offer['zipcode']} {offer['city']}
+        ----------------------------------------------\n
+        """
 
-    🏠 Accommodation Type: {sample_offer['accommodation_type_label']}
-    📐 Surface Area: {sample_offer['surface']} m²
-    💰 Rental Price: €{sample_offer['rental_price']}/month
-    📍 Address: {sample_offer['address']}, {sample_offer['zipcode']} {sample_offer['city']}
-
-    Key Details:
-    - 📌 Reference: {sample_offer['reference']}
-    - 👥 Roommate Friendly: {'Yes' if sample_offer['roommate'] else 'No'}
-    - 🏢 Partner: {sample_offer['partner_label']}
-    - 🕒 Available Until: {sample_offer['date_validity']}
-    - 👤 Current Candidates on Offer: {sample_offer['number_candidates_on_offer']}
-
-    Don't miss your chance to apply!
-
-    Warm regards,
-    """
+    message += "Don't miss your chance to apply!\n\nWarm regards,"
 
     msg = MIMEMultipart()
     msg["From"] = sender_email
