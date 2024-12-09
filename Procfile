@@ -1,1 +1,1 @@
-worker: prefect worker start --pool 'default' --work-queue 'default'
+worker: prefect cloud login --key $PREFECT_API_KEY --workspace $PREFECT_WORKSPACE && prefect deploy && prefect worker start --pool 'default' --work-queue 'default'
