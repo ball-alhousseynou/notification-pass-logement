@@ -1,1 +1,1 @@
-worker: python -m prefect.engine --pool 'default' --work-queue 'default'
+worker: prefect worker start --pool 'default' --work-queue 'default'
