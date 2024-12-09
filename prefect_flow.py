@@ -63,11 +63,11 @@ def process_passlogement_data(file_path):
 def send_email_notification(data):
 
     sender_email = get_prefect_variable("sender_email")
-    receiver_emails = get_prefect_variable("receiver_email")
+    receiver_email = get_prefect_variable("receiver_email")
     sender_password_app = get_prefect_variable("sender_password_app")
     sample_offer = data[0]
 
-    subject = f"TEST-APP - Passlogement: {len(data)} Great offers retrieved"
+    subject = f"TEST-Passlogement: {len(data)} Great offers retrieved"
     message = f"""
     New Rental Opportunity: {sample_offer['city']}
     🌟 Exclusive Offer from {sample_offer['partner_label']} 🌟
@@ -95,16 +95,15 @@ def send_email_notification(data):
 
     msg = MIMEMultipart()
     msg["From"] = sender_email
+    msg["To"] = ", ".join(receiver_email)
     msg["Subject"] = subject
     msg.attach(MIMEText(message, "plain"))
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(sender_email, sender_password_app)
-            for receiver_email in receiver_emails:
-                msg["To"] = receiver_email
-                text = msg.as_string()
-                server.sendmail(sender_email, receiver_email, text)
+            text = msg.as_string()
+            server.sendmail(sender_email, receiver_email, text)
         prefect.get_run_logger().info("Email notification sent successfully!")
     except Exception as e:
         prefect.get_run_logger().error(f"Failed to send email: {e}")
