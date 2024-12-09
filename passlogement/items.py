@@ -26,6 +26,7 @@ class Offers(BaseModel):
             self.number_candidates_on_offer < 5
             and self.accommodation_type_label in {"T2", "T3"}
             and self.date_created >= thirty_minutes_ago
+            or self.date_updated >= thirty_minutes_ago
         )
 
     class Config:
