@@ -7,7 +7,7 @@ from passlogement.items import Offers
 
 class PassLogementSpider(scrapy.Spider):
     name = "passlogement"
-    start_urls = ["https://offres.passlogement.com/account/auth/login"]
+    allowed_domains = ["passlogement.com"]
 
     def __init__(self, username, password, *args, **kwargs):
         super().__init__(*args, **kwargs)
